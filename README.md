@@ -1,0 +1,2 @@
+# UF modular Dissertation template
+The main take away here is the modified class file. I have simplified how the table of contents is generated, reorganized how the introduction and conclusion files are collected and imported into the main document, and have implemented it in a way that supports the subfile document class. This document class allows users to compile individual chapters for the purpose of proofreading and editing.
