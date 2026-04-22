@@ -1,0 +1,23 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../Images/}}}
+
+\begin{document}
+\chapter{This is the second appendix}
+If you have more than 1 appendix, we need to change the ToC by adding a signifier row for APPENDICES and then have individual rows for APPENDIX A and APPENDIX B with continuing alpha headers. So something like:
+\begin{table}[]
+    \centering
+    \begin{tabular}{l l c r}
+        APPENDIX A & THIS IS THE FIRST APPENDIX TITLE& ... & PAGE\\
+        APPENDIX B & THIS IS THE SECOND APPENDIX TITLE& ... & PAGE\\
+        APPENDIX C & THIS IS THE THIRD APPENDIX TITLE& ... & PAGE\\
+    \end{tabular}
+    \caption[Second appendix table]{second table appendix}
+    \label{tab:AppToC2}
+\end{table}
+
+So it's an awkward change from default behavior where it's \*\textit{almost}\* the same, but not quite.
+
+In Jason's set-up, he compressed all abstract files into a single abstract file for import. But I don't particularly enjoy that either. So I've edited it to make appendices act just like regular chapters. Instead of swapping it automatically in the \verb|\AtEndDocument| and doing a bit of brute force, I incorporate the style changes into \verb|\appendix|. This is the method of swapping your chapters/sections into the appendices that I was taught, so it feels more natural.
+
+However, this comes with one potential downside: If there are sections between appendices and the list of references, they need to have to have an additional style change. But looking at UF's dissertation style guide, they will be just as unhappy that there are extra bits there.
+\end{document}
